@@ -37,6 +37,9 @@ const Root = styled.div`
   .slider {
     display: flex;
     animation: scroll 15s infinite linear;
+    :hover {
+      animation-play-state: paused;
+    }
   }
   .slider__slide {
     flex-shrink: 0;
