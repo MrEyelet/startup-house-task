@@ -13,6 +13,30 @@ const Root = styled.div`
   .row {
     height: 17.5rem;
     position: relative;
+    &::before,
+    &:after {
+      content: "";
+      width: 25rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      z-index: 10;
+      background: rgba(255, 255, 255, 1);
+      background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(58%, rgba(255, 255, 255, 0.42)), color-stop(100%, rgba(255, 255, 255, 0)));
+      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
+      background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
+      background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+    }
+    &::after {
+      left: unset;
+      right: 0;
+      transform: rotate(180deg);
+    }
   }
   .wrapper {
     display: flex;
