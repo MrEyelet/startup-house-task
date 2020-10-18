@@ -7,18 +7,18 @@ import slide4 from "./assets/slide-4.jpg"
 import slide5 from "./assets/slide-5.jpg"
 import slide6 from "./assets/slide-6.jpg"
 
-const Root = styled.div`
+const Slideshow = styled.div`
   position: relative;
   overflow: hidden;
   .wrapper {
     display: flex;
-    width: 100vw;
+    width: var(--marquee-width);
     margin: 0 auto 4rem;
     overflow: hidden;
     &::before,
     &:after {
       content: "";
-      width: 10rem;
+      width: 20vw;
       height: 100%;
       position: absolute;
       top: 0;
@@ -36,14 +36,14 @@ const Root = styled.div`
   }
   .slider {
     display: flex;
-    animation: scroll 15s infinite linear;
+    animation: scroll var(--marquee-animation-dur) infinite linear;
     :hover {
       animation-play-state: paused;
     }
   }
   .slider__slide {
     flex-shrink: 0;
-    width: calc(20vw - 1rem);
+    width: calc(var(--marquee-el-width) - 1rem);
     margin-right: 1rem;
     img {
       width: 100%;
@@ -52,16 +52,16 @@ const Root = styled.div`
   }
   @keyframes scroll {
     0% {
-      transform: translateX(0);
+      transform: translateX(calc(-1 * var(--marquee-el-width) * var(--marquee-items)));
     }
     100% {
-      transform: translateX(-120vw);
+      transform: translateX(0);
     }
   }
 `
 
 export const Marquee = () => (
-  <Root>
+  <Slideshow>
     <div className="row">
       <div className="wrapper">
         <div className="slider">
@@ -101,5 +101,5 @@ export const Marquee = () => (
         </div>
       </div>
     </div>
-  </Root>
+  </Slideshow>
 )

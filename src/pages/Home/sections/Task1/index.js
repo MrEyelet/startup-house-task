@@ -22,7 +22,6 @@ export const Task1 = () => (
         <br />
         <Section.Description>Place your slider below this paragraph.</Section.Description>
       </Section.Header>
-      {/* Please, put your `<Slider />` component here. */}
     </Section.Content>
     <Marquee />
   </Section.Wrapper>
