@@ -13,7 +13,7 @@ const Root = styled.div`
   .wrapper {
     display: flex;
     width: 80vw;
-    margin: 0 auto;
+    margin: 0 auto 4rem;
     overflow: hidden;
     &::before,
     &:after {
@@ -39,8 +39,9 @@ const Root = styled.div`
     animation: scroll 15s infinite linear;
   }
   .slider__slide {
-    width: 20vw;
     flex-shrink: 0;
+    width: calc(20vw - 1rem);
+    margin-right: 1rem;
     img {
       width: 100%;
       border-radius: 0.5rem;
