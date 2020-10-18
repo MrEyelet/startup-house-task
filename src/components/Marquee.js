@@ -60,46 +60,56 @@ const Slideshow = styled.div`
   }
 `
 
-export const Marquee = () => (
-  <Slideshow>
-    <div className="row">
-      <div className="wrapper">
-        <div className="slider">
-          <div className="slider__slide">
-            <img src={slide1} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide2} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide3} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide4} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide5} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide6} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide1} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide2} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide3} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide4} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide5} alt="" />
+function Marquee() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const root = document.documentElement
+    const marqueeItemsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-display")
+    // const test = getComputedStyle(root).getPropertyValue("--marquee-items")
+    const marquee = document.querySelector(".slider")
+
+    // console.log(marqueeItemsDisplayed)
+
+    // console.log(test)
+
+    // console.log(root.style.setProperty(test, marquee.children.length))
+
+    // root.addEventListener("DOMContentLoaded", e => {
+    root.style.setProperty("--marquee-items", marquee.children.length)
+    // })
+
+    for (let i = 0; i < marqueeItemsDisplayed; i++) {
+      marquee.appendChild(marquee.children[i].cloneNode(true))
+    }
+  })
+
+  return (
+    <Slideshow>
+      <div className="row">
+        <div className="wrapper">
+          <div className="slider">
+            <div className="slider__slide">
+              <img src={slide1} alt="" />
+            </div>
+            <div className="slider__slide">
+              <img src={slide2} alt="" />
+            </div>
+            <div className="slider__slide">
+              <img src={slide3} alt="" />
+            </div>
+            <div className="slider__slide">
+              <img src={slide4} alt="" />
+            </div>
+            <div className="slider__slide">
+              <img src={slide5} alt="" />
+            </div>
+            <div className="slider__slide">
+              <img src={slide6} alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </Slideshow>
-)
+    </Slideshow>
+  )
+}
+
+export default Marquee
