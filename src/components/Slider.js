@@ -9,6 +9,49 @@ import slide6 from "./assets/slide-6.jpg"
 
 export const Slider = () => (
   <>
-    <h1>Slider</h1>
+    <div className="row">
+      <div className="wrapper">
+        <div className="slider">
+          <div className="slider__slide">
+            <img src={slide1} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide2} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide3} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide4} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide5} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide6} alt="" />
+          </div>
+        </div>
+        <div className="slider">
+          <div className="slider__slide">
+            <img src={slide1} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide2} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide3} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide4} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide5} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide6} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
   </>
 )
