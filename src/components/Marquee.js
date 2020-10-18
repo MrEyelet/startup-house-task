@@ -14,7 +14,6 @@ const Slideshow = styled.div`
     display: flex;
     width: var(--marquee-width);
     margin: 0 auto 4rem;
-    overflow: hidden;
     &::before,
     &:after {
       content: "";
@@ -39,6 +38,10 @@ const Slideshow = styled.div`
     animation: scroll var(--marquee-animation-dur) infinite linear;
     :hover {
       animation-play-state: paused;
+      img {
+        opacity: 0.5;
+        transition: 0.25s opacity ease-in-out;
+      }
     }
   }
   .slider__slide {
@@ -48,14 +51,17 @@ const Slideshow = styled.div`
     img {
       width: 100%;
       border-radius: 0.5rem;
+      :hover {
+        opacity: 1;
+      }
     }
   }
   @keyframes scroll {
     0% {
-      transform: translateX(calc(-1 * var(--marquee-el-width) * var(--marquee-items)));
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(0);
+      transform: translateX(calc(-1 * var(--marquee-el-width) * var(--marquee-items)));
     }
   }
 `

@@ -14,6 +14,12 @@ const Root = styled.div`
     -webkit-box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
+    transition: 0.5s ease-in-out;
+    transition-property: box-shadow, transform;
+    :hover {
+      box-shadow: none;
+      transform: scale(0.98);
+    }
   }
 `
 
