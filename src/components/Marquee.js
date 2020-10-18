@@ -12,7 +12,7 @@ const Root = styled.div`
   overflow: hidden;
   .wrapper {
     display: flex;
-    width: 80vw;
+    width: 100vw;
     margin: 0 auto 4rem;
     overflow: hidden;
     &::before,
@@ -25,12 +25,12 @@ const Root = styled.div`
       z-index: 10;
     }
     &:before {
-      left: 9vw;
+      left: 0;
       background: linear-gradient(to right, #f8fafd 0%, transparent 100%);
     }
     &::after {
       left: unset;
-      right: 9vw;
+      right: 0;
       background: linear-gradient(to left, #f8fafd 0%, transparent 100%);
     }
   }
@@ -94,6 +94,9 @@ export const Marquee = () => (
           </div>
           <div className="slider__slide">
             <img src={slide4} alt="" />
+          </div>
+          <div className="slider__slide">
+            <img src={slide5} alt="" />
           </div>
         </div>
       </div>
