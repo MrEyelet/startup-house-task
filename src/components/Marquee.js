@@ -10,44 +10,33 @@ import slide6 from "./assets/slide-6.jpg"
 const Root = styled.div`
   position: relative;
   overflow: hidden;
-  .row {
-    &::before,
-    &:after {
-      content: "";
-      width: 25rem;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: red;
-      z-index: 10;
-      background: rgba(255, 255, 255, 1);
-      background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(58%, rgba(255, 255, 255, 0.42)), color-stop(100%, rgba(255, 255, 255, 0)));
-      background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
-      background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
-      background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
-      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.42) 58%, rgba(255, 255, 255, 0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
-    }
-    &::after {
-      left: unset;
-      right: 0;
-      transform: rotate(180deg);
-    }
-  }
   .wrapper {
     display: flex;
     width: 80vw;
     margin: 0 auto;
     overflow: hidden;
+    &::before,
+    &:after {
+      content: "";
+      width: 10rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+    }
+    &:before {
+      left: 9vw;
+      background: linear-gradient(to right, #f8fafd 0%, transparent 100%);
+    }
+    &::after {
+      left: unset;
+      right: 9vw;
+      background: linear-gradient(to left, #f8fafd 0%, transparent 100%);
+    }
   }
   .slider {
     display: flex;
     animation: scroll 15s infinite linear;
-    &::before {
-      content: "";
-    }
   }
   .slider__slide {
     width: 20vw;
