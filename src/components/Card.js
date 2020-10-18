@@ -11,7 +11,8 @@ const Root = styled.div`
     max-width: 15rem;
     width: 100%;
     border-radius: 0.5rem;
-  `
+  }
+`
 
 function Card() {
   const gitHubUserUrl = "https://api.github.com/users/mreyelet"
@@ -23,11 +24,11 @@ function Card() {
 
   const getGiHubUser = async () => {
     try {
-      console.log("everything ok")
+      // console.log("everything ok")
       const response = await axios.get(gitHubUserUrl)
       setUserData(response.data)
     } catch {
-      console.log("there was an error")
+      // console.log("there was an error")
     }
   }
 
