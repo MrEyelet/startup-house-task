@@ -7,6 +7,11 @@ import slide4 from "./assets/slide-4.jpg"
 import slide5 from "./assets/slide-5.jpg"
 import slide6 from "./assets/slide-6.jpg"
 
+const Root = styled.div`
+  position: relative;
+  overflow: hidden;
+`
+
 export const Slider = () => (
   <>
     <div className="row">
