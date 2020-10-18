@@ -64,18 +64,9 @@ function Marquee() {
   document.addEventListener("DOMContentLoaded", function () {
     const root = document.documentElement
     const marqueeItemsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-display")
-    // const test = getComputedStyle(root).getPropertyValue("--marquee-items")
     const marquee = document.querySelector(".slider")
 
-    // console.log(marqueeItemsDisplayed)
-
-    // console.log(test)
-
-    // console.log(root.style.setProperty(test, marquee.children.length))
-
-    // root.addEventListener("DOMContentLoaded", e => {
     root.style.setProperty("--marquee-items", marquee.children.length)
-    // })
 
     for (let i = 0; i < marqueeItemsDisplayed; i++) {
       marquee.appendChild(marquee.children[i].cloneNode(true))
