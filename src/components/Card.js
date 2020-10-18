@@ -11,6 +11,9 @@ const Root = styled.div`
     max-width: 15rem;
     width: 100%;
     border-radius: 0.5rem;
+    -webkit-box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
   }
 `
 

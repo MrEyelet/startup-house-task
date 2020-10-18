@@ -11,8 +11,6 @@ const Root = styled.div`
   position: relative;
   overflow: hidden;
   .row {
-    height: 17.5rem;
-    position: relative;
     &::before,
     &:after {
       content: "";
@@ -40,24 +38,36 @@ const Root = styled.div`
   }
   .wrapper {
     display: flex;
-    position: absolute;
+    width: 80vw;
+    margin: 0 auto;
+    overflow: hidden;
   }
   .slider {
     display: flex;
+    animation: scroll 15s infinite linear;
     &::before {
       content: "";
     }
   }
   .slider__slide {
-    margin: 0 1rem;
+    width: 20vw;
+    flex-shrink: 0;
     img {
-      width: 25rem;
+      width: 100%;
       border-radius: 0.5rem;
+    }
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-120vw);
     }
   }
 `
 
-export const Slider = () => (
+export const Marquee = () => (
   <Root>
     <div className="row">
       <div className="wrapper">
@@ -80,8 +90,6 @@ export const Slider = () => (
           <div className="slider__slide">
             <img src={slide6} alt="" />
           </div>
-        </div>
-        <div className="slider">
           <div className="slider__slide">
             <img src={slide1} alt="" />
           </div>
@@ -93,12 +101,6 @@ export const Slider = () => (
           </div>
           <div className="slider__slide">
             <img src={slide4} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide5} alt="" />
-          </div>
-          <div className="slider__slide">
-            <img src={slide6} alt="" />
           </div>
         </div>
       </div>

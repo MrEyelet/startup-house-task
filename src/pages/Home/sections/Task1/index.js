@@ -2,7 +2,7 @@ import React from "react"
 
 import { ExamplePreview } from "components/ExamplePreview"
 import * as Section from "components/PageSection"
-import { Slider } from "components/Slider"
+import { Marquee } from "components/Marquee"
 
 import previewImg from "./assets/slider.gif"
 
@@ -24,6 +24,6 @@ export const Task1 = () => (
       </Section.Header>
       {/* Please, put your `<Slider />` component here. */}
     </Section.Content>
-    <Slider />
+    <Marquee />
   </Section.Wrapper>
 )
