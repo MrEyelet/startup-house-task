@@ -33,7 +33,7 @@ const Slideshow = styled.div`
       background: linear-gradient(to left, #f8fafd 0%, transparent 100%);
     }
   }
-  .slider {
+  .marquee {
     display: flex;
     animation: scroll var(--marquee-animation-dur) infinite linear;
     :hover {
@@ -44,7 +44,7 @@ const Slideshow = styled.div`
       }
     }
   }
-  .slider__slide {
+  .marquee__item {
     flex-shrink: 0;
     width: calc(var(--marquee-el-width) - 1rem);
     margin-right: 1rem;
@@ -67,40 +67,56 @@ const Slideshow = styled.div`
 `
 
 function Marquee() {
-  document.addEventListener("DOMContentLoaded", function () {
-    const root = document.documentElement
-    const marqueeItemsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-display")
-    const marquee = document.querySelector(".slider")
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   console.log("loaded")
+  //   const root = document.documentElement
+  //   const marqueeItemsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-display")
+  //   const marquee = document.querySelector(".marquee")
 
-    root.style.setProperty("--marquee-items", marquee.children.length)
+  //   root.style.setProperty("--marquee-items", marquee.children.length)
 
-    for (let i = 0; i < marqueeItemsDisplayed; i++) {
-      marquee.appendChild(marquee.children[i].cloneNode(true))
-    }
-  })
+  //   for (let i = 0; i < marqueeItemsDisplayed; i++) {
+  //     marquee.appendChild(marquee.children[i].cloneNode(true))
+  //   }
+  // })
 
   return (
     <Slideshow>
       <div className="row">
         <div className="wrapper">
-          <div className="slider">
-            <div className="slider__slide">
+          <div className="marquee">
+            <div className="marquee__item">
               <img src={slide1} alt="" />
             </div>
-            <div className="slider__slide">
+            <div className="marquee__item">
               <img src={slide2} alt="" />
             </div>
-            <div className="slider__slide">
+            <div className="marquee__item">
               <img src={slide3} alt="" />
             </div>
-            <div className="slider__slide">
+            <div className="marquee__item">
               <img src={slide4} alt="" />
             </div>
-            <div className="slider__slide">
+            <div className="marquee__item">
               <img src={slide5} alt="" />
             </div>
-            <div className="slider__slide">
+            <div className="marquee__item">
               <img src={slide6} alt="" />
+            </div>
+            <div className="marquee__item">
+              <img src={slide1} alt="" />
+            </div>
+            <div className="marquee__item">
+              <img src={slide2} alt="" />
+            </div>
+            <div className="marquee__item">
+              <img src={slide3} alt="" />
+            </div>
+            <div className="marquee__item">
+              <img src={slide4} alt="" />
+            </div>
+            <div className="marquee__item">
+              <img src={slide5} alt="" />
             </div>
           </div>
         </div>

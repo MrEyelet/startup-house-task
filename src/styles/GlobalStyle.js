@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 export const GlobalStyle = createGlobalStyle`
   :root {
     --marquee-width: 100vw;
-    
+    --marquee-items: 6;
     --marquee-display: 5;
     /* prettier-ignore */
     --marquee-el-width: calc(var(--marquee-width)/var(--marquee-display));
