@@ -1,27 +1,6 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
+import { Root, Modal } from "./styles"
 import axios from "axios"
-
-const Root = styled.div`
-  p {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  img {
-    max-width: 15rem;
-    width: 100%;
-    border-radius: 0.5rem;
-    -webkit-box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 33px 86px -47px rgba(0, 0, 0, 0.75);
-    transition: 0.5s ease-in-out;
-    transition-property: box-shadow, transform;
-    :hover {
-      box-shadow: none;
-      transform: scale(0.98);
-    }
-  }
-`
 
 function Card() {
   const gitHubUserUrl = "https://api.github.com/users/mreyelet"
@@ -38,6 +17,9 @@ function Card() {
       setUserData(response.data)
     } catch {
       // console.log("there was an error")
+
+      const error = document.querySelector(".modal")
+      setUserData((error.style.display = "flex"))
     }
   }
 
@@ -47,6 +29,9 @@ function Card() {
       <a href={userData.html_url} target="blank">
         <img src={userData.avatar_url} alt={userData.login} />
       </a>
+      <Modal className="modal">
+        <p>There was a problem with a server and the content could not be displayed.</p>
+      </Modal>
     </Root>
   )
 }

@@ -1,17 +1,16 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { Menu } from "./styles"
 
 export const Nav = () => (
-  <ul className="menu">
-    <li className="menu__item">
-      <Link to="/start" className="menu__link">
-        Start
-      </Link>
-    </li>
-    <li className="menu__item">
-      <Link to="/profile" className="menu__link">
-        My Profile
-      </Link>
-    </li>
-  </ul>
+  <Menu>
+    <ul>
+      <li>
+        <Link to="/start">Start</Link>
+      </li>
+      <li>
+        <Link to="/profile">My Profile</Link>
+      </li>
+    </ul>
+  </Menu>
 )

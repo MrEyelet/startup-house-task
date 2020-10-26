@@ -2,7 +2,7 @@ import React from "react"
 
 import { ExamplePreview } from "components/ExamplePreview"
 import * as Section from "components/PageSection"
-import Marquee from "components/Marquee"
+import { Marquee } from "../../../../components/Marquee"
 
 import previewImg from "./assets/slider.gif"
 

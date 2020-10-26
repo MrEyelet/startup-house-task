@@ -25,27 +25,3 @@ export const Wrapper = styled.div`
     align-items: center;
   }
 `
-export const Menu = styled.div`
-  min-width: 10rem;
-  margin-left: auto;
-  .menu {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 5rem;
-    margin: 0;
-    padding-left: 0;
-  }
-  .menu__item {
-    list-style-type: none;
-    font-weight: bold;
-  }
-  .menu__link {
-    text-decoration: none;
-    color: #000;
-    transition: opacity 0.35s ease-in-out;
-    :hover {
-      opacity: 0.5;
-    }
-  }
-`
